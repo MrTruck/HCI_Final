@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Styles for popup */
+    .popup {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+    }
+
+    .popup img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .popup .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      background: none;
+      border: none;
+      color: black;
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .popup button.action-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .popup button.action-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="products_container">
+    <div class="filterDiv" data-id="1" data-name="Product 1" data-price="$10.00" data-image="https://via.placeholder.com/150">
+      Product 1
+    </div>
+    <div class="filterDiv" data-id="2" data-name="Product 2" data-price="$15.00" data-image="https://via.placeholder.com/150">
+      Product 2
+    </div>
+    <div class="filterDiv" data-id="3" data-name="Product 3" data-price="$20.00" data-image="https://via.placeholder.com/150">
+      Product 3
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup-overlay"></div>
+  <div class="popup" data-id="">
+    <button class="close">&times;</button>
+    <img src="" alt="Product Image" />
+    <h2></h2>
+    <p></p>
+    <button class="action-btn" id="add-to-cart">Add to Cart</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterDivs = document.querySelectorAll('.filterDiv');
+      const popup = document.querySelector('.popup');
+      const popupOverlay = document.querySelector('.popup-overlay');
+      const popupImage = popup.querySelector('img');
+      const popupTitle = popup.querySelector('h2');
+      const popupPrice = popup.querySelector('p');
+      const closeButton = popup.querySelector('.close');
+      const actionButton = popup.querySelector('.action-btn');
+
+      filterDivs.forEach(div => {
+        div.addEventListener('click', () => {
+          const id = div.getAttribute('data-id');
+          const name = div.getAttribute('data-name');
+          const price = div.getAttribute('data-price');
+          const image = div.getAttribute('data-image');
+
+          popup.setAttribute('data-id', id);
+          popupTitle.textContent = name;
+          popupPrice.textContent = price;
+          popupImage.src = image;
+
+          popup.style.display = 'block';
+          popupOverlay.style.display = 'block';
+        });
+      });
+
+      closeButton.addEventListener('click', () => {
+        popup.style.display = 'none';
+        popupOverlay.style.display = 'none';
+      });
+
+      popupOverlay.addEventListener('click', () => {
+        popup.style.display = 'none';
+        popupOverlay.style.display = 'none';
+      });
+
+      actionButton.addEventListener('click', () => {
+        const id = popup.getAttribute('data-id');
+        alert(`Item with ID ${id} added to cart!`);
+      });
+    });
+  </script>
+</body>
+</html>
