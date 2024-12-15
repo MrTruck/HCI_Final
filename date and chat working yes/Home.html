@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple E-Commerce</title>
+  <link rel="stylesheet" href="CSS\style.css">
+  <link rel="stylesheet" href="CSS\chat.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,grocery,location_on,notifications,shopping_cart,store "rel="stylesheet"  />
+
+ 
+</head>
+<body style="margin: 0px; background: rgb(255, 250, 244)">
+
+  <!-- supposed to be the navbar -->
+<div class="ultimate_nav">
+  <header>
+
+    <div class = "element_container">
+
+
+        <div class = "logo">      
+          <a class = "unhovered" href='Home.html'>
+            <img class="logo "  src="https://cdn.animaapp.com/projects/673dab3263b5c67177c683c2/releases/673dafd5ad868c6a88d1d3ba/img/logo.svg" >  
+            <span class="link logo"></span>
+          </a>
+        </div>
+      
+        <div class = "location_icon material-symbols-outlined icon">
+          <span class="material-symbols-outlined icon">
+            location_on
+          </span>
+        </div>  
+        <div class="Search_bar" >
+          <input 
+          type="text" 
+          id="search-bar" 
+          placeholder="What are you looking for?" 
+          oninput="showSuggestions()"
+        >
+        <div id="suggestions" class="suggestions hidden"></div>
+              <img class="Search_ICON"  src="https://cdn.animaapp.com/projects/673dab3263b5c67177c683c2/releases/673dafd5ad868c6a88d1d3ba/img/icon.svg" >
+            
+        </div>
+
+        <div class = "shopping_icons_box material-symbols-outlined icon">        
+          <a href='Products.html'>
+            <span class="material-symbols-outlined icon">
+              store
+            </span>
+          </a>
+          <a href='cart.html'>
+            <span class="material-symbols-outlined icon">
+              shopping_cart
+
+            </span>
+          </a>
+          <a href='notification.html'>
+            <span class="material-symbols-outlined icon">
+              notifications
+            </span>
+          </a>
+<!--------------------------------------------------- SIGN IN / ACC CIRCLE---------------------------------------------->
+          <div class="sign_container" id="sign-in"><button  class="btn"  id="sign-in">Sign In</button></div>
+          <a href="account.html" id="accounticon">
+            <span class="material-symbols-outlined icon">
+              account_circle
+            </span>
+          </a>
+           
+        </div>
+    </div>
+
+  </header>
+  <!--=============================================WASTE INDEX=====================================================-->
+  <div id="white-guys" >
+    
+    <div id="barcontainer" class="barcontainer dropdown-toggle" >
+      <div class="line-eco-meter"></div>
+      <div class="line-waste-meter"></div>
+    </div>
+    
+  </div>
+  <!--============================================= dropdown eco-meter=====================================================-->
+  <div id="dropdown-content" class="dropdown-content">
+    <div class="stats">
+      <h2> Total eco-points: <span id="mini-eco-points"></span></h2>
+      <div class="bar2container">
+        <div class="mini-eco"></div>
+      </div>
+      <h2> Total waste-points: <span id="mini-waste-points"></span></h2>
+      <div class="bar3container">
+        <div class="mini-waste"></div>
+      </div>
+      <p id="help" ><a href='account.html'>More information</a></p>
+      
+    </div>
+    
+  </div>
+  <!-- for adding the waste index later -->
+  
+
+</div>
+
+<!--===================================== slider =====================================-->
+ <!--
+<div class = "headline">
+  <section class="container">
+    <div class="slider-wrapper">
+      <div class="slider">
+        <img id="slide-1" src="https://i.ibb.co.com/bKh50Jk/slide-1.png" />
+        <img id="slide-2" src="https://i.ibb.co.com/XSBgtVZ/slide-2.png" />
+        <img id="slide-3" src="https://i.ibb.co.com/mJz9TTH/no-good.png"  />
+      </div>
+      
+    </div>
+    <div class="slider-nav">
+        <a href="#slide-1"></a>
+        <a href="#slide-2"></a>
+        <a href="#slide-3"></a>
+    </div>
+  </section>  
+</div>
+-->
+
+<div class="slide-container">
+	
+	<div class="slides">
+		<img src="https://i.ibb.co.com/dJ6VCG4/slide-1.png" class="active ">
+		<img src="https://i.ibb.co.com/XSBgtVZ/slide-2.png">
+		<img src="https://i.ibb.co.com/XSBgtVZ/slide-2.png">
+    <img src="https://i.ibb.co.com/XSBgtVZ/slide-2.png">
+    <img src="https://i.ibb.co.com/XSBgtVZ/slide-2.png">
+	</div>
+
+	<div class="buttons">
+		<span class="next">&#10095;</span>
+		<span class="prev">&#10094;</span>
+	</div>
+
+	<div class="dotsContainer">
+		<div class="dot active" attr='0' onclick="switchImage(this)"></div>
+		<div class="dot" attr='1' onclick="switchImage(this)"></div>
+		<div class="dot" attr='2' onclick="switchImage(this)"></div>
+		<div class="dot" attr='3' onclick="switchImage(this)"></div>
+		<div class="dot" attr='4' onclick="switchImage(this)"></div>
+	</div>
+
+</div>
+
+
+<!--============================MARQUEE=======================================-->
+<div class="marquee">
+  <div class="marquee__inner" aria-hidden="true">
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+      <span>welcome</span>
+  </div>
+</div>
+
+<div class = "title_categories">
+  <h3>All Categories</h3>
+</div>
+
+<!-- CATEGORIES SECTION -->
+<section class="categorieS">
+  <a href="Products.html?tab=Fruits" >
+    <div class="category" >  <!-- Fruits -->
+        <h3>Fruits</h3>
+        
+        <img src="https://i.ibb.co.com/3dsytrC/fruits-2x.png" alt="Product 1">
+    </div>
+  </a>  
+  <a href="Products.html?tab=Vegetables">
+    <div class="category" >  <!-- Vegetables -->
+      <h3>Vegetables</h3>
+      <img src="https://i.ibb.co.com/b3xsHs8/vegetables-2x.png"alt="Product 2">    
+    </div>
+  </a>
+  <a href="Products.html?tab=Least Waste">
+  <div class="category" > <!-- Least waste -->
+    <h3>Least Waste</h3>
+    <img src="https://i.ibb.co.com/GHyLpGJ/less-waste-2x.png" alt="Product 3">    
+  </div>
+  </a>
+  <div class="category" > <!-- Meat -->
+    <h3>Meat</h3>
+    <img src="https://i.ibb.co.com/z2qgqLz/meat-2x.png" alt="Product 4">    
+  </div>
+<!----------------------------------------------------------------------------------->
+  <div class="category" > <!-- Snacks -->
+    <h3>Snacks</h3>
+    <img src="https://i.ibb.co.com/fV3wnBp/snacks-2x.png" alt="Product 4">    
+  </div>
+  <div class="category" > <!-- dairy -->
+    <h3>Dairy</h3>
+    <img src="https://i.ibb.co.com/Pjvgcww/dairy-2x.png" alt="Product 4">    
+  </div>
+  <div class="category" > <!-- Bakery -->
+    <h3>Bakery</h3>
+    <img src="https://i.ibb.co.com/SnFpJ5j/bakery-2x.png" alt="Product 4">    
+  </div>
+  <div class="category" > <!-- Frozen -->
+    <h3>Frozen</h3>
+    <img src="https://i.ibb.co.com/FVM5nJ6/frozen-2x.png" alt="Product 4">    
+  </div>
+<!----------------------------------------------------------------------------------->  
+  <div class="category" > <!-- Seafood -->
+    <h3>Seafood</h3>
+    <img src="https://i.ibb.co.com/S3LrFm9/seafood-2x.png" alt="Product 4">    
+  </div>
+  <div class="category" > <!-- Canned -->
+    <h3>Spices</h3>
+    <img src="https://i.ibb.co.com/ky3khjZ/spices-2x.png" alt="Product 4">    
+  </div>
+  <div class="category" > <!-- Self Care -->
+    <h3>Self Care</h3>
+    <img src="https://i.ibb.co.com/PjpFmgP/self-care-2x.png" alt="Product 4">    
+  </div>
+  <div class="category" > <!-- Cleaning -->
+    <h3>Cleaning</h3>
+    <img src="https://i.ibb.co.com/fGsLgWV/house-cleaning-2x.png" alt="Product 4">    
+  </div>
+<!----------------------------------------------------------------------------------->  
+  <div class="category" > <!-- 21 -->
+    <h3>21+</h3>
+    <img src="https://i.ibb.co.com/716HHtd/21-2x.png" alt="Product 4">    
+  </div>
+  <div class="category" > <!-- cookware -->
+    <h3>Cookware</h3>
+    <img src="https://i.ibb.co.com/Bq6zWbr/Cook-ware-2x.png" alt="Product 4">    
+  </div>
+  <div class="category" > <!-- petfood -->
+    <h3>Petfood</h3>
+    <img src="https://i.ibb.co.com/H2Jmkby/petfood-2x.png" alt="Product 4">    
+  </div>
+  <div class="category" > <!-- tools -->
+    <h3>Tools</h3>
+    <img src="https://i.ibb.co.com/M7q715Q/tools-2x.png" alt="Product 4">    
+  </div>
+</section>
+<!---------------------------------------- Chatbox ----------------------------------------->
+<div class="chat-popup" id="chatPopup">
+  <div class="chat-header">
+    Chat with driver
+    <span class="close-btn" onclick="toggleChatPopup()">X</span>
+  </div>
+  <div class="chat-body">
+    <p>Your order is being delivered!</p>
+  </div>
+  <div class="chat-footer">
+    <input type="text" placeholder="Type a message..." />
+  </div>
+</div>
+
+<!-- Chat Button -->
+<button class="chat-button" onclick="toggleChatPopup()">💬</button>
+
+<!---------------------------------------- Footer ----------------------------------------->
+
+<footer>
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-section">
+      <h4>About Us</h4>
+      <p>Your one-stop shop for all your shopping needs. We provide quality products with excellent customer service.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="Products.html">Shop</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Customer Support -->
+    <div class="footer-section">
+      <h4>Customer Support</h4>
+      <p>Email: support@example.com</p>
+      <p>Phone: +1 800 123 4567</p>
+      <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2024 YourCompany. All Rights Reserved.
+  </div>
+</footer>
+
+<div class="time_decay">
+  <button  id="Time-Decay">Simulate Time Decay </button>
+</div>
+
+<script src="Script/front_page.js"></script>
+<script src="Script/chat.js">
+</script>
+</body>
+</html>
