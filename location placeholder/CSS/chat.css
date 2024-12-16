@@ -1,0 +1,81 @@
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #F8C519;
+    color: white;
+    font-size: 30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    display:none;
+}
+
+/* Style for the chat popup */
+.chat-popup {
+    position: fixed;
+    bottom: 10px; /* Adjust this so the popup doesn't cover the button */
+    right: 10px;
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 11;
+  }
+  
+  /* Style for the header of the chatbox */
+  .chat-header {
+    background-color: #F8C519;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Close button */
+  .close-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+  }
+  
+  /* Style for the body of the chatbox */
+  .chat-body {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    font-size: 14px;
+    color: #333;
+
+  }
+  
+  /* Style for the footer of the chatbox */
+  .chat-footer {
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .chat-footer input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 90%
+  }

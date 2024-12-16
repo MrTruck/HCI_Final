@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/notification.css" />
+    <link rel="stylesheet" href="CSS/chat.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,add_circle,do_not_disturb_on,grocery,location_on,notifications,search,shopping_cart,store"
+    />
+    <title>Notification Page</title>
+  </head>
+  <body style="margin: 0px; background: rgb(255, 250, 244)">
+<!--================================================ NAVBAR =============================================-->
+<div class="ultimate_nav">
+  <header>
+
+    <div class = "element_container">
+
+
+        <div class = "logo">      
+          <a class = "unhovered" href='Home.html'>
+            <img class="logo "  src="https://cdn.animaapp.com/projects/673dab3263b5c67177c683c2/releases/673dafd5ad868c6a88d1d3ba/img/logo.svg" >  
+            <span class="link logo"></span>
+          </a>
+        </div>
+      
+        <div class = "location_icon material-symbols-outlined icon">
+          <span class="material-symbols-outlined icon">
+            location_on
+          </span>
+        </div>  
+
+        <div class="Search_bar" >
+          <div class = "search_bar_icon_wrapper">
+            <span class="material-symbols-outlined search_ikon">search</span>
+            <input 
+            type="text" 
+            id="search-bar" 
+            placeholder="What are you looking for?" 
+            oninput="showSuggestions()">
+          </div>
+          <div id="suggestions" class="suggestions hidden"></div>           
+        </div>
+
+        <div class = "shopping_icons_box material-symbols-outlined icon">        
+          <a href='Products.html'>
+            <span class="material-symbols-outlined icon">
+              store
+            </span>
+          </a>
+          <a href='cart.html'>
+            <span class="material-symbols-outlined icon">
+              shopping_cart
+
+            </span>
+          </a>
+          <a href='notification.html'>
+            <span class="material-symbols-outlined on_page">
+              notifications
+            </span>
+          </a>
+<!--------------------------------------------------- SIGN IN / ACC CIRCLE---------------------------------------------->
+          <div class="sign_container" id="sign-in"><button  class="btn"  id="sign-in">Sign In</button></div>
+          <a href="account.html" id="accounticon">
+            <span class="material-symbols-outlined icon">
+              account_circle
+            </span>
+          </a>
+           
+        </div>
+    </div>
+
+  </header>
+  <!--------------------------------------------- WASTE INDEX -------------------------------------------------------->
+  <div id="white-guys" >
+    <div id="barcontainer" class="barbarcontainer">
+      <div id="barcontainer" class="barcontainer dropdown-toggle" >
+        <div id="floater1" class="line-eco-meter"></div>
+        <div id="floater2" class="line-waste-meter"></div>
+      </div>
+    </div>
+  </div>
+  <!--============================================= dropdown eco-meter=====================================================-->
+  <div id="dropdown-content" class="dropdown-content">
+    <div class="stats">
+      <h2> Total eco-points: <span id="mini-eco-points"></span></h2>
+      <div class="bar2container">
+        <div class="mini-eco"></div>
+      </div>
+      <h2> Total waste-points: <span id="mini-waste-points"></span></h2>
+      <div class="bar3container">
+        <div class="mini-waste"></div>
+      </div>
+      <p id="help" ><a href='account.html'>More information</a></p>
+      
+    </div>
+    
+  </div>
+
+
+</div>
+<!--======================================================== END OF NAVBAR ==================================-->
+
+
+
+    <main class="notification-page">
+      <h1 class="page-title">List of Transactions</h1>
+
+      <!-- Filters Section -->
+      <div class="filters">
+        <div class="status-filters">
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn active">Ongoing</button>
+          <button class="filter-btn active">Received</button>
+          <button class="filter-btn active">Unpaid</button>
+        </div>
+        <div class="sort-filter">
+          <label for="sort">Sort by:</label>
+          <div class="SRTdropdown">
+            <button class="filter-btn SRTdropdown-toggle">Newest</button>
+            <div class="SRTdropdown-content">
+              <button class="filter-option">Oldest</button>
+              <button class="filter-option">Price: Low to High</button>
+              <button class="filter-option">Price: High to Low</button>
+              <button class="filter-option">Alphabetical</button>
+              <button class="filter-option">Newest</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transactions Section -->
+      <div class="transactions">
+        <!-- Transaction Item -->
+        <div class="transaction-items"></div>
+      
+      </div>
+    </main>
+
+<!--======================== Popup ========================-->
+
+<div class="popup-overlay"></div>
+<div class="popup" data-id="">
+  <button class="close">&times;</button>
+  <img src="" alt="Product_img" />
+  <h2></h2>
+  <p></p><div id="quantity-control">
+  </div>
+</div>
+    <!-- Modal -->
+
+    <div id="customModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 class="modal-title">Details</h2>
+        <div class="modal-section"> 
+          <p><strong>Status:</strong> Ongoing</p>
+          <p><strong>Date:</strong> 17 September 2029 5:00 PM</p>
+          <p><strong>Invoice:</strong> INV/20290817/377701702</p>
+          <p>
+            <strong>Driver Status:</strong>
+            <span class="highlight">Packaging delivery</span>
+          </p>
+        </div>
+        <hr />
+        <div class="item-section">
+          <img src="Images\banana.jpg" alt="Product Image" class="item-image" />
+          <div class="item-details">
+            <p><strong>Imported Banana by Chiquitta Brand</strong></p>
+            <p><strong>Total:</strong> Rp 60.000</p>
+          </div>
+        </div>
+        <a href="#" class="see-all-items">See all items</a>
+      </div>
+    </div>
+
+<!---------------------------------------- Chatbox ----------------------------------------->
+<div class="chat-popup" id="chatPopup">
+  <div class="chat-header">
+    Chat with driver
+    <span class="close-btn" onclick="toggleChatPopup()">X</span>
+  </div>
+  <div class="chat-body">
+    <p>Your order is being delivered!</p>
+  </div>
+  <div class="chat-footer">
+    <input type="text" placeholder="Type a message..." />
+  </div>
+</div>
+
+<!-- Chat Button -->
+<button class="chat-button" onclick="toggleChatPopup()">💬</button>
+
+
+<!---------------------------------------- Footer ----------------------------------------->
+
+<footer>
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-section">
+      <h4>About Us</h4>
+      <p>Your one-stop shop for all your shopping needs. We provide quality products with excellent customer service.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="Products.html">Shop</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Customer Support -->
+    <div class="footer-section">
+      <h4>Customer Support</h4>
+      <p>Email: support@friendly.com</p>
+      <p>Phone: +1 800 123 4567</p>
+      <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2024 FriendlyFarmers. All Rights Reserved.
+  </div>
+</footer>
+
+
+
+
+    <script src="Script/notification.js"></script>
+    <script src="Script/chat.js"></script>
+  </body>
+</html>

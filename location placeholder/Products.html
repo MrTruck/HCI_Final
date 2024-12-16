@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Products.css">
+  <link rel="stylesheet" href="CSS\chat.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,add_circle,do_not_disturb_on,grocery,location_on,notifications,search,shopping_cart,store"/>
+  
+</head>
+<body style="margin: 0px; background: rgb(255, 250, 244)">
+  <div class="ultimate_nav">
+    <header>
+  
+      <div class = "element_container">
+        <div class = "logo">      
+          <a href='Home.html'>
+            <img class="logo"  src="https://cdn.animaapp.com/projects/673dab3263b5c67177c683c2/releases/673dafd5ad868c6a88d1d3ba/img/logo.svg" >  
+            <span class="link logo"></span>
+          </a>
+        </div>
+          <div class = "location_icon material-symbols-outlined icon">
+            <span class="material-symbols-outlined icon">
+              location_on
+            </span>
+          </div>  
+          <!----------------------------- Search Bar -------------------------------->
+          <div class="Search_bar" >
+            <div class = "search_bar_icon_wrapper">
+              <span class="material-symbols-outlined search_ikon">search</span>
+              <input 
+              type="text" 
+              id="search-bar" 
+              placeholder="What are you looking for?" 
+              oninput="showSuggestions()">
+            </div>
+            <div id="suggestions" class="suggestions hidden"></div>           
+          </div>
+  
+          <div id="suggestions" class="suggestions hidden"></div>              
+          
+  <!----------------------------- right side icons -------------------------------->
+          <div class = "shopping_icons_box material-symbols-outlined icon">        
+            <span class="icon on_page">
+              store
+            </span>
+            <a href='cart.html'>
+              <span class="material-symbols-outlined icon">
+                shopping_cart
+  
+              </span>
+            </a>
+            <a href='notification.html'>
+              <span class="material-symbols-outlined icon">
+                notifications
+              </span>
+            </a>
+<!--------------------------------------------------- SIGN IN / ACC CIRCLE---------------------------------------------->
+            <div class="sign_container" id="sign-in"><button  class="sign_in_btn"  id="sign-in">Sign In</button></div>
+            <a href="account.html" id="accounticon">
+              <span class="material-symbols-outlined icon">
+                account_circle
+              </span>
+            </a>
+          </div>
+      </div>
+  
+    </header>
+  <!--------------------------------------------- WASTE INDEX -------------------------------------------------------->
+    <div id="white-guys" >
+      <div id="barcontainer" class="barbarcontainer">
+        <div id="barcontainer" class="barcontainer dropdown-toggle" >
+          <div id="floater1" class="line-eco-meter"></div>
+          <div id="floater2" class="line-waste-meter"></div>
+        </div>
+      </div>
+    </div>
+    <!--============================================= dropdown eco-meter=====================================================-->
+    <div id="dropdown-content" class="dropdown-content">
+      <div class="stats">
+        <h2> Total eco-points: <span id="mini-eco-points"></span></h2>
+        <div class="bar2container">
+          <div class="mini-eco"></div>
+        </div>
+        <h2> Total waste-points: <span id="mini-waste-points"></span></h2>
+        <div class="bar3container">
+          <div class="mini-waste"></div>
+        </div>
+        <p id="help" ><a href='account.html'>More information</a></p>
+        
+      </div>
+      
+    </div>
+
+  </div>
+<!--======================================================== END OF NAVBAR ==================================-->
+
+<div class="scrollable-menu">
+  <h2 class="category_text">Categories:</h2>
+
+  <div class="tablink" onclick="openPage('Fruits', this)"id="defaultOpen">
+    <img src="https://i.ibb.co.com/3dsytrC/fruits-2x.png" alt="Product 1">
+    <h5>Fruits</h5>
+  </div>
+
+  <div class="tablink" onclick="openPage('Vegetables', this)"data-tab="Vegetables" >
+    <img src="https://i.ibb.co.com/b3xsHs8/vegetables-2x.png"alt="Product 2">
+    <h5>Vegetables</h5>
+  </div>
+
+  <div class="tablink" onclick="openPage('LeastWaste', this)">
+    <img src="https://i.ibb.co.com/GHyLpGJ/less-waste-2x.png" alt="Product 3">
+    <h5>Least Waste</h5>
+  </div>
+
+  <div class="tablink" onclick="openPage('Meat', this)">
+    <img src="https://i.ibb.co.com/z2qgqLz/meat-2x.png" alt="Product 4">
+    <h5>Meat</h5>
+  </div>
+
+<!---------------------------------------------------------------------------separator to prevent headache-------------------------------------------------------------------------->
+  
+  <div class="tablink" onclick="openPage('SNACKS', this)">
+    <img src="https://i.ibb.co.com/fV3wnBp/snacks-2x.png" alt="Product 1">
+    <h5>Snacks</h5>
+  </div>
+
+  <div class="tablink" onclick="openPage('DAIRY', this)">
+    <img src="https://i.ibb.co.com/Pjvgcww/dairy-2x.png"alt="Product 2">
+    <h5>Dairy</h5>
+  </div>
+
+  <div class="tablink" onclick="openPage('BAKERY', this)">
+    <img src="https://i.ibb.co.com/SnFpJ5j/bakery-2x.png" alt="Product 3">
+    <h5>Bakery</h5>
+  </div>
+
+  <div class="tablink" onclick="openPage('FROZEN', this)">
+    <img src="https://i.ibb.co.com/FVM5nJ6/frozen-2x.png" alt="Product 4">
+    <h5>Frozen</h5>
+  </div>
+
+<!---------------------------------------------------------------------------separator to prevent headache-------------------------------------------------------------------------->
+
+  <div class="tablink" onclick="openPage('SEAFOOD', this)">
+    <img src="https://i.ibb.co.com/S3LrFm9/seafood-2x.png" alt="Product 1">
+    <h5>Seafood</h5>
+  </div>
+
+  <div class="tablink" onclick="openPage('SPICES', this)">
+    <img src="https://i.ibb.co.com/ky3khjZ/spices-2x.png"alt="Product 2">
+    <h5>Spices</h5>
+  </div>
+
+  <div class="tablink" onclick="openPage('SELFCARE', this)">
+    <img src="https://i.ibb.co.com/PjpFmgP/self-care-2x.png" alt="Product 3">
+    <h5>Selfcare</h5>
+  </div>
+
+  <div class="tablink" onclick="openPage('CLEANING', this)">
+    <img src="https://i.ibb.co.com/fGsLgWV/house-cleaning-2x.png" alt="Product 4">
+    <h5>Cleaning</h5>
+  </div>
+
+<!---------------------------------------------------------------------------separator to prevent headache-------------------------------------------------------------------------->
+
+<div class="tablink" onclick="openPage('21+', this)">
+  <img src="https://i.ibb.co.com/716HHtd/21-2x.png" alt="Product 1">
+  <h5>21+</h5>
+</div>
+
+<div class="tablink" onclick="openPage('COOKWARE', this)">
+  <img src="https://i.ibb.co.com/Bq6zWbr/Cook-ware-2x.png"alt="Product 2">
+  <h5>Cookware</h5>
+</div>
+
+<div class="tablink" onclick="openPage('PETFOOD', this)">
+  <img src="https://i.ibb.co.com/H2Jmkby/petfood-2x.png" alt="Product 3">
+  <h5>Petfood</h5>
+</div>
+
+<div class="tablink" onclick="openPage('TOOLS', this)">
+  <img src="https://i.ibb.co.com/M7q715Q/tools-2x.png" alt="Product 4">
+  <h5>Tools</h5>
+</div>
+
+
+
+</div>
+  <!--======================== Popup of product card ========================-->
+
+  <div class="popup-overlay"></div>
+  <div class="popup" data-id="">
+    <button class="close">&times;</button>
+    <img src="" alt="Product_img" />
+    <h2></h2>
+    <p></p><div id="quantity-control">
+      <button class='addremove' id="remove"><span class="material-symbols-outlined" class='remove'> do_not_disturb_on</button></span>
+      <input type="text" id="amount-value" placeholder="Amount">
+      <button class='addremove' id="add"><span class="material-symbols-outlined">add_circle </span></button>
+    <button id="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+<!--============================================================================ FRUITS ===================================================================================-->
+
+<div id="Fruits" class="tabcontent">
+ 
+      <section id="myBtnContainer" class="BtnContainer"><!--========================SUBCATEGORY BUTTON===============================-->
+        <button class="btn" onclick="filterSelection('all')">Show all</button>
+        <button class="btn" onclick="filterSelection('Sustainable')">Sustainable</button>
+        <button class="btn" onclick="filterSelection('Local')"> Local</button>
+        <button class="btn" onclick="filterSelection('Import')"> Import</button>
+        <button class="btn" onclick="filterSelection('In Season')"> In Season</button>
+        <button class="btn" onclick="filterSelection('Apple')"> Apple</button>
+        <button class="btn" onclick="filterSelection('Mango')"> Mango</button>
+        <button class="btn" onclick="filterSelection('Orange')"> Orange</button>
+        <button class="btn" onclick="filterSelection('Grapes')"> Grapes</button>
+        <button class="btn" onclick="filterSelection('Melon')"> Melon</button>
+      </section>
+
+
+ <!--============================================= FRUITS ====================================-->
+
+      <section class="products_container">
+<!------------------------------------------------APPLE-------------------------------------------------------->
+        <div class="filterDiv Import Apple" 
+        data-id="2" 
+        data-name="Fuji Apples " 
+        data-price="$10.00" 
+        data-image="https://images.pexels.com/photos/13817843/pexels-photo-13817843.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+        data-description="A great duct!" 
+        data-category="Category A">
+
+          <div class="product">
+            <div class = "img_container">
+              <img src="https://images.pexels.com/photos/13817843/pexels-photo-13817843.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" >
+            </div>
+            <h2>Fuji Apples</h2>
+            <h5>450 - 550 gr / pack</h5>
+            <h2>$10.00</h2>
+
+            <!--wasteindex-->
+            <p>Waste Index: 3 </p>
+            <div class="Waste_index_container">
+              <div class="Wasteness THREE"></div>
+            </div>
+            <!-------------->
+
+          </div>
+        </div>
+<!------------------------------------------------ORANGE-------------------------------------------------------->
+        <div class="filterDiv Import Orange" 
+        data-id="1" 
+        data-name="Mandarin Orange" 
+        data-price="$9.00" 
+        data-image="https://images.pexels.com/photos/2294477/pexels-photo-2294477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+        data-description="A great pruct!" 
+        data-category="Category A">
+          <div class="product ">
+            <div class = "img_container">
+              <img src="https://images.pexels.com/photos/2294477/pexels-photo-2294477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" >
+            </div>
+            <h2>Mandarin Orange</h2>
+            <h5>450 - 550 gr / pack</h5>
+            <h2>$9.00</h2>
+
+            <!--wasteindex-->
+            <p>Waste Index: 3</p>
+            <div class="Waste_index_container">
+              <div class="Wasteness THREE"></div>
+            </div>
+            <!-------------->
+          </div>
+        </div>
+<!------------------------------------------------GRAPE-------------------------------------------------------->
+        <div 
+        class="filterDiv Sustainable Local Grapes" 
+        data-id="1" 
+        data-name="Mandarin Orange" 
+        data-price="$10.00" 
+        data-image="https://images.pexels.com/photos/60021/grapes-wine-fruit-vines-60021.jpeg?auto=compress&cs=tinysrgb&w=600" 
+        data-description="A great product!" 
+        data-category="Category A">
+
+          <div class="product ">
+            <div class = "img_container">
+              <img src="https://images.pexels.com/photos/60021/grapes-wine-fruit-vines-60021.jpeg?auto=compress&cs=tinysrgb&w=600" >
+            </div>
+            <h2>Grapes Local</h2>
+            <h5>450 - 550 gr / pack</h5>
+            <h2>$10.00</h2>
+
+            <!--wasteindex-->
+            <p>Waste Index: 2</p>
+            <div class="Waste_index_container">
+              <div class="Wasteness TWO"></div>
+            </div>
+            <!-------------->
+
+          </div>
+        </div>
+<!------------------------------------------------- MELON ------------------------------------------------------->
+        
+        <div class="filterDiv In Season Melon"
+        data-id="4" 
+        data-name="Melon" 
+        data-price="$30.00" 
+        data-image="https://images.pexels.com/photos/1327734/pexels-photo-1327734.jpeg?auto=compress&cs=tinysrgb&w=600" 
+        data-description="A great product!" 
+        data-category="Category A">
+
+          <div class="product ">
+            <div class = "img_container">
+              <img src="https://images.pexels.com/photos/1327734/pexels-photo-1327734.jpeg?auto=compress&cs=tinysrgb&w=600" >
+            </div>
+            <h2>Melon</h2>
+            <h5>450 - 550 gr / pack</h5>
+            <h2>$10.00</h2>
+
+            <!--wasteindex-->
+            <p>Waste Index: 4</p>
+            <div class="Waste_index_container">
+              <div class="Wasteness FOUR"></div>
+            </div>
+            <!-------------->
+
+          </div>
+        </div>
+<!------------------------------------------------- MANGO ------------------------------------------------------->       
+        <div class="filterDiv Sustainable Local In Season Mango"
+          data-id="5" 
+          data-name="Mango" 
+          data-price="$5.00" 
+          data-image="https://foodprint.org/wp-content/uploads/2018/10/AdobeStock_116749966_1920x960_RFE.jpg" 
+          data-description="A great product!" 
+          data-category="Category A">
+  
+            <div class="product ">
+              <div class = "img_container">
+                <img src="https://foodprint.org/wp-content/uploads/2018/10/AdobeStock_116749966_1920x960_RFE.jpg" >
+              </div>
+              <h2>Mango</h2>
+              <h5>450 - 550 gr / pack</h5>
+              <h2>$5.00</h2>
+  
+              <!--wasteindex-->
+              <p>Waste Index: 2</p>
+              <div class="Waste_index_container">
+                <div class="Wasteness TWO"></div>
+              </div>
+              <!-------------->  
+            </div>
+        </div>
+
+      </section>
+</div>  
+
+
+<!--============================================================================ VEGINA ===================================================================================-->
+
+<div id="Vegetables" class="tabcontent">
+
+  <div id="myBtnContainerVeg" class="BtnContainer">
+    <button class="btn" onclick="filterSelectionVeg('all')">Show all</button>
+    <button class="btn" onclick="filterSelectionVeg('Sustainable')">Sustainable</button>
+    <button class="btn" onclick="filterSelectionVeg('Local')">Local</button>
+    <button class="btn" onclick="filterSelectionVeg('Import')">Import</button>
+    <button class="btn" onclick="filterSelectionVeg('In Season')">In Season</button>
+    <button class="btn" onclick="filterSelectionVeg('Celery')">Celery</button>
+    <button class="btn" onclick="filterSelectionVeg('Lettuce')">Lettuce</button>    
+    <button class="btn" onclick="filterSelectionVeg('Corn')">Corn</button>
+    <button class="btn" onclick="filterSelectionVeg('Tomato')">Tomato</button>
+  </div>
+
+<section class="products_container">
+<!------------------------------------------------celery-------------------------------------------------------->
+    <div class="filterDiv Sustainable In Season Import Celery" 
+    data-id="6" 
+    data-name="Celery" 
+    data-price="$7.00" 
+    data-image="https://images.pexels.com/photos/13044694/pexels-photo-13044694.jpeg?auto=compress&cs=tinysrgb&w=600" 
+    data-description="A great pruct!" 
+    data-category="Category A">
+      <div class="product ">
+        <div class = "img_container">
+          <img src="https://images.pexels.com/photos/13044694/pexels-photo-13044694.jpeg?auto=compress&cs=tinysrgb&w=600" >
+        </div>
+        <h2>Celery</h2>
+        <h5>450 - 550 gr / pack</h5>
+        <h2>$7.00</h2>
+
+        <!--wasteindex-->
+        <p>Waste Index: 2</p>
+        <div class="Waste_index_container">
+          <div class="Wasteness TWO"></div>
+        </div>
+        <!-------------->
+      </div>
+    </div>
+<!------------------------------------------------lettuce-------------------------------------------------------->        
+    <div class="filterDiv Sustainable Import Lettuce" 
+    data-id="7" 
+    data-name="Lettuce" 
+    data-price="$7.00" 
+    data-image="https://images.pexels.com/photos/1199562/pexels-photo-1199562.jpeg?auto=compress&cs=tinysrgb&w=600" 
+    data-description="A great pruct!" 
+    data-category="Category A">
+      <div class="product ">
+        <div class = "img_container">
+          <img src="https://images.pexels.com/photos/1199562/pexels-photo-1199562.jpeg?auto=compress&cs=tinysrgb&w=600" >
+        </div>
+        <h2>Lettuce</h2>
+        <h5>450 - 550 gr / pack</h5>
+        <h2>$7.00</h2>
+
+        <!--wasteindex-->
+        <p>Waste Index: 2</p>
+        <div class="Waste_index_container">
+          <div class="Wasteness TWO"></div>
+        </div>
+        <!-------------->
+      </div>
+    </div>
+
+<!------------------------------------------------corn-------------------------------------------------------->   
+    <div class="filterDiv Local Corn" 
+    data-id="8" 
+    data-name="Corn" 
+    data-price="$3.00" 
+    data-image="https://images.pexels.com/photos/603030/pexels-photo-603030.jpeg?auto=compress&cs=tinysrgb&w=600" 
+    data-description="A great pruct!" 
+    data-category="Category A">
+      <div class="product ">
+        <div class = "img_container">
+          <img src="https://images.pexels.com/photos/603030/pexels-photo-603030.jpeg?auto=compress&cs=tinysrgb&w=600" >
+        </div>
+        <h2>Corn</h2>
+        <h5>450 - 550 gr / pack</h5>
+        <h2>$3.00</h2>
+
+        <!--wasteindex-->
+        <p>Waste Index: 6</p>
+        <div class="Waste_index_container">
+          <div class="Wasteness SIX"></div>
+        </div>
+        <!-------------->
+      </div>
+    </div>
+
+<!------------------------------------------------tomato--------------------------------------------------------> 
+    <div class="filterDiv Local Tomato" 
+    data-id="9" 
+    data-name="Tomato" 
+    data-price="$5.00" 
+    data-image="https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=600" 
+    data-description="A great pruct!" 
+    data-category="Category A">
+      <div class="product ">
+        <div class = "img_container">
+          <img src="https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=600" >
+        </div>
+        <h2>Tomato</h2>
+        <h5>450 - 550 gr / pack</h5>
+        <h2>$5.00</h2>
+
+        <!--wasteindex-->
+        <p>Waste Index: 4</p>
+        <div class="Waste_index_container">
+          <div class="Wasteness FOUR"></div> 
+        </div>
+        <!-------------->
+      </div>
+    </div>
+<!--------------------------------------------------------------------------------------------------------> 
+
+  
+</section>
+</div>
+
+<!--============================================================================ LEAST WASTE ===================================================================================-->
+<div id="LeastWaste" class="tabcontent">
+
+  <div id="myBtnContainerLW" class="BtnContainer">
+    <button class="btn" onclick="filterSelectionLW('all')">Show all</button>
+    <button class="btn" onclick="filterSelectionLW('Local')">Local</button>
+    <button class="btn" onclick="filterSelectionLW('Import')">Import</button>
+  </div>
+  <section class="products_container">
+    <!------------------------------------------------watermelon-------------------------------------------------------->
+        <div class="filterDiv Sustainable In Season Import Celery" 
+        data-id="10" 
+        data-name="Watermelon" 
+        data-price="$10.00" 
+        data-image="https://images.pexels.com/photos/974561/pexels-photo-974561.jpeg?auto=compress&cs=tinysrgb&w=600" 
+        data-description="A great pruct!" 
+        data-category="Category A">
+          <div class="product ">
+            <div class = "img_container">
+              <img src="https://images.pexels.com/photos/974561/pexels-photo-974561.jpeg?auto=compress&cs=tinysrgb&w=600" >
+            </div>
+            <h2>Watermelon</h2>
+            <h5>450 - 550 gr / pack</h5>
+            <h2>$10.00</h2>
+    
+            <!--wasteindex-->
+            <p>Waste Index: 1</p>
+            <div class="Waste_index_container">
+              <div class="Wasteness ONE"></div>
+            </div>
+            <!-------------->
+          </div>
+        </div>
+    <!------------------------------------------------blackberry-------------------------------------------------------->        
+        <div class="filterDiv Sustainable Import Lettuce" 
+        data-id="11" 
+        data-name="Blackberry" 
+        data-price="$13.00" 
+        data-image="https://images.pexels.com/photos/892808/pexels-photo-892808.jpeg?auto=compress&cs=tinysrgb&w=600" 
+        data-description="A great pruct!" 
+        data-category="Category A">
+          <div class="product ">
+            <div class = "img_container">
+              <img src="https://images.pexels.com/photos/892808/pexels-photo-892808.jpeg?auto=compress&cs=tinysrgb&w=600" >
+            </div>
+            <h2>Blackberry</h2>
+            <h5>450 - 550 gr / pack</h5>
+            <h2>$13.00</h2>
+    
+            <!--wasteindex-->
+            <p>Waste Index: 2</p>
+            <div class="Waste_index_container">
+              <div class="Wasteness TWO"></div>
+            </div>
+            <!-------------->
+          </div>
+        </div>
+    
+    <!------------------------------------------------lemon-------------------------------------------------------->   
+        <div class="filterDiv Local Corn" 
+        data-id="12" 
+        data-name="Lemon" 
+        data-price="$20.00" 
+        data-image="https://images.pexels.com/photos/129574/pexels-photo-129574.jpeg?auto=compress&cs=tinysrgb&w=600" 
+        data-description="A great pruct!" 
+        data-category="Category A">
+          <div class="product ">
+            <div class = "img_container">
+              <img src="https://images.pexels.com/photos/129574/pexels-photo-129574.jpeg?auto=compress&cs=tinysrgb&w=600" >
+            </div>
+            <h2>Lemon</h2>
+            <h5>450 - 550 gr / pack</h5>
+            <h2>$20.00</h2>
+    
+            <!--wasteindex-->
+            <p>Waste Index: 1</p>
+            <div class="Waste_index_container">
+              <div class="Wasteness ONE"></div>
+            </div>
+            <!-------------->
+          </div>
+        </div>
+    
+    <!------------------------------------------------clementine--------------------------------------------------------> 
+        <div class="filterDiv Local Tomato" 
+        data-id="13" 
+        data-name="Clementine" 
+        data-price="$30.00" 
+        data-image="https://images.pexels.com/photos/207085/pexels-photo-207085.jpeg?auto=compress&cs=tinysrgb&w=600" 
+        data-description="A great pruct!" 
+        data-category="Category A">
+          <div class="product ">
+            <div class = "img_container">
+              <img src="https://images.pexels.com/photos/207085/pexels-photo-207085.jpeg?auto=compress&cs=tinysrgb&w=600" >
+            </div>
+            <h2>Clementine</h2>
+            <h5>450 - 550 gr / pack</h5>
+            <h2>$30.00</h2>
+    
+            <!--wasteindex-->
+            <p>Waste Index: 1</p>
+            <div class="Waste_index_container">
+              <div class="Wasteness ONE"></div> 
+            </div>
+            <!-------------->
+          </div>
+        </div>
+    <!--------------------------------------------------------------------------------------------------------> 
+    
+      
+    </section>
+
+
+
+
+</div>
+
+
+<!--============================================================================MEATS===================================================================================-->
+
+<div id="Meat" class="tabcontent">
+  <h3>Meat</h3>
+  <p>Who we are and what we do.</p>
+</div>
+<!--============================================================================SNACKS===================================================================================-->
+
+<div id="SNACKS" class="tabcontent">
+  <h3>SNACKS</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<!--============================================================================DAIRY===================================================================================-->
+
+<div id="DAIRY" class="tabcontent">
+  <h3>DAIRY</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<!--============================================================================BAKERY===================================================================================-->
+
+<div id="BAKERY" class="tabcontent">
+  <h3>BAKERY</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<!--============================================================================FROZEN===================================================================================-->
+
+<div id="FROZEN" class="tabcontent">
+  <h3>FROZEN</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<!--============================================================================SEAFOOD===================================================================================-->
+
+<div id="SEAFOOD" class="tabcontent">
+  <h3>FROZEN</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<!--============================================================================SPICES===================================================================================-->
+
+<div id="SPICES" class="tabcontent">
+  <h3>FROZEN</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<!--============================================================================SELFCARE===================================================================================-->
+
+<div id="SELFCARE" class="tabcontent">
+  <h3>FROZEN</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<!--============================================================================CLEANING===================================================================================-->
+
+<div id="CLEANING" class="tabcontent">
+  <h3>FROZEN</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+
+
+
+<!--===============================================================================================================================================================-->
+
+
+<!---------------------------------------- Chatbox ----------------------------------------->
+<div class="chat-popup" id="chatPopup">
+  <div class="chat-header">
+    Chat with driver
+    <span class="close-btn" onclick="toggleChatPopup()">X</span>
+  </div>
+  <div class="chat-body">
+    <p>Your order is being delivered!</p>
+  </div>
+  <div class="chat-footer">
+    <input type="text" placeholder="Type a message..." />
+  </div>
+</div>
+
+<!-- Chat Button -->
+<button class="chat-button" onclick="toggleChatPopup()">💬</button>
+
+   <!---------------------------------------- Footer ----------------------------------------->
+
+<footer>
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-section">
+      <h4>About Us</h4>
+      <p>Your one-stop shop for all your shopping needs. We provide quality products with excellent customer service.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="Products.html">Shop</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Customer Support -->
+    <div class="footer-section">
+      <h4>Customer Support</h4>
+      <p>Email: support@friendly.com</p>
+      <p>Phone: +1 800 123 4567</p>
+      <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2024 FriendlyFarmers. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="Products.js"></script>
+<script src="Script/chat.js"></script>
+</body>
+</html> 
