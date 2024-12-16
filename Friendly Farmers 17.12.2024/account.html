@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account page</title>
+  <link rel="stylesheet" href="CSS\style.css">
+  <link rel="stylesheet" href="CSS\chat.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,notifications,shopping_cart " />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,add_circle,do_not_disturb_on,grocery,location_on,notifications,search,shopping_cart,store "rel="stylesheet"  />
+
+
+</head>
+<body style="margin: 0px; background: rgb(255, 250, 244)">
+
+<!--================================================ NAVBAR ========================================================================-->
+<div class="ultimate_nav">
+  <header>
+
+    <div class = "element_container">
+
+
+        <div class = "logo">      
+          <a class = "unhovered" href='Home.html'>
+            <img class="logo "  src="https://cdn.animaapp.com/projects/673dab3263b5c67177c683c2/releases/673dafd5ad868c6a88d1d3ba/img/logo.svg" >  
+            <span class="link logo"></span>
+          </a>
+        </div>
+      
+        <div class = "location_icon material-symbols-outlined icon">
+          <span class="material-symbols-outlined icon">
+            location_on
+          </span>
+        </div>  
+
+        <div class="Search_bar" >
+          <div class = "search_bar_icon_wrapper">
+            <span class="material-symbols-outlined search_ikon">search</span>
+            <input 
+            type="text" 
+            id="search-bar" 
+            placeholder="What are you looking for?" 
+            oninput="showSuggestions()">
+          </div>
+          <div id="suggestions" class="suggestions hidden"></div>           
+        </div>
+
+        <div class = "shopping_icons_box material-symbols-outlined icon">        
+          <a href='Products.html'>
+            <span class="material-symbols-outlined icon">
+              store
+            </span>
+          </a>
+          <a href='cart.html'>
+            <span class="material-symbols-outlined icon">
+              shopping_cart
+
+            </span>
+          </a>
+          <a href='notification.html'>
+            <span class="material-symbols-outlined icon">
+              notifications
+            </span>
+          </a>
+<!--------------------------------------------------- SIGN IN / ACC CIRCLE---------------------------------------------->
+          <div class="sign_container" id="sign-in"><button  class="btn"  id="sign-in">Sign In</button></div>
+          <a href="account.html" id="accounticon">
+            <span class="material-symbols-outlined on_page">
+              account_circle
+            </span>
+          </a>
+           
+        </div>
+    </div>
+
+  </header>
+  <!--------------------------------------------- WASTE INDEX -------------------------------------------------------->
+  <div id="white-guys" >
+    <div id="barcontainer" class="barbarcontainer">
+      <div id="barcontainer" class="barcontainer dropdown-toggle" >
+        <div id="floater1" class="line-eco-meter"></div>
+        <div id="floater2" class="line-waste-meter"></div>
+      </div>
+    </div>
+  </div>
+  <!--============================================= dropdown eco-meter=====================================================-->
+  <div id="dropdown-content" class="dropdown-content">
+    <div class="stats">
+      <h2> Total eco-points: <span id="mini-eco-points"></span></h2>
+      <div class="bar2container">
+        <div class="mini-eco"></div>
+      </div>
+      <h2> Total waste-points: <span id="mini-waste-points"></span></h2>
+      <div class="bar3container">
+        <div class="mini-waste"></div>
+      </div>
+      <p id="help" ><a href='account.html'>More information</a></p>
+      
+    </div>
+    
+  </div>
+
+
+</div>
+<!--======================================================== END OF NAVBAR =============================================================-->
+
+</div>
+<div id="profile">
+  <div class="profile-info">
+    <img src="Images/profile-img.png" id="profile-pic">
+    <h2 id="full-name">John Doe</h2>
+    <button type="button" id="signout">Sign Out</button>
+  </div>
+  
+  <div class="divider"></div>
+  
+  
+  
+  <div class="stats">
+    <h1>Your Eco-Meter:</h1>
+    <p> Total eco-points: <span id="total-eco-points">120</span></p>
+    <div class="bar2container">
+      <div class="mini-eco"></div>
+    </div>
+    <p> Total waste-points: <span id="total-waste-points">35</span></p>
+    <div class="bar3container">
+      <div class="mini-waste"></div>
+    </div>
+    <p id="eligible-discount"></p>
+    <p id="feedback">d</p>
+    
+  </div>
+  
+</div>
+
+
+<div id="eco-meter-help">
+  <h2 id="eco-help">How Does The Eco-Meter Work? </h2>
+  
+</div>
+<div class="help-content">
+  <div id="opening-p">
+    <h3>The Eco-Meter</h3>
+    <p>The Eco-Meter is designed to help you track and balance your environmental impact while shopping sustainably. It consists of two progress bars: Eco Points and Waste Points, each reflecting your sustainable shopping behavior. Here's how they work:</p>
+  </div>
+  <div id="meat-p">
+    <h3>Eco Points</h3>
+    <p>The Eco Points visualize your accumulated eco points, which reward you for making sustainable purchasing choices.</p>
+    <p><strong>How to Earn Eco Points:</strong></p>
+    <ul>
+      <li>Eco points are earned based on the waste index of the products in your cart.</li>
+      <li>Products are assigned a waste index based on factors such as the environmental impact of their production, including materials like plastic, pollution from manufacturing, packaging, and other waste-related considerations.</li>
+      <li>Products with a low waste index (under 5) contribute more eco points. For instance, if a product has a waste index of 2, you'll earn (5 - 2) = 3 eco points for each unit purchased.</li>
+      <li>Eco points are capped at 100, so you’ll always have a clear measure of your sustainability efforts.</li>
+    </ul>
+    <p><strong>Benefits of Eco Points:</strong></p>
+    <ul>
+      <li>Eco points unlock discounts you can apply during checkout.</li>
+      <li>The more eco points you have, the larger the discount available (up to a maximum of 30% per transaction).</li>
+      <li>Discounts are calculated based on the difference between your eco points and waste points, ensuring that your sustainable behavior directly impacts your rewards.</li>
+    </ul>
+  </div>
+  <div id="meat-p">
+    <h3>Waste Points</h3>
+    <p>The Waste Points track your accumulated waste points, which represent the environmental impact of your purchases.</p>
+    <p><strong>How Waste Points Accumulate:</strong></p>
+    <ul>
+      <li>Waste points are calculated using the waste index of the products in your cart. For example, purchasing a product with a waste index of 3 will add 3 waste points for each unit bought.</li>
+      <li>Waste points are capped at 100 to keep your progress measurable.</li>
+    </ul>
+    <p><strong>How to Reduce Waste Points:</strong></p>
+    <ul>
+      <li>Waste points can be reduced naturally over time: every 2 days, your waste points will decrease automatically to reflect your ongoing efforts to reduce waste.</li>
+      <li>Purchasing low-waste or zero-waste products helps you maintain a lower waste score.</li>
+    </ul>
+  </div>
+  <div id="meat-p">
+    <h3>Inspiration and Insights</h3>
+    <p>By interacting with these meters, you’ll gain insights into how your choices affect both your rewards and the environment. The meters are designed to inspire thoughtful purchasing and help you avoid overbuying, while providing tangible incentives for sustainable behavior.</p>
+  </div>
+</div>
+
+
+
+
+</div>
+<!---------------------------------------- Chatbox ----------------------------------------->
+<div class="chat-popup" id="chatPopup">
+  <div class="chat-header">
+    Chat with driver
+    <span class="close-btn" onclick="toggleChatPopup()">X</span>
+  </div>
+  <div class="chat-body">
+    <p>Your order is being delivered!</p>
+  </div>
+  <div class="chat-footer">
+    <input type="text" placeholder="Type a message..." />
+  </div>
+</div>
+
+<!-- Chat Button -->
+<button class="chat-button" onclick="toggleChatPopup()">💬</button>
+
+<script src="Script/account.js"></script>
+<script src="Script/chat.js"></script>
+</body>
+</html>
